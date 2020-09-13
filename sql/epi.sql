@@ -38,12 +38,13 @@ CREATE TABLE dynamic (
 INSERT INTO dynamic VALUES (null,'今日疫情防护打卡','img/dynamic/1.jpg',1567382190,'1');
 -- 用户点赞表
 CREATE TABLE islike (
+    id INT PRIMARY KEY AUTO_INCREMENT,
     did INT NOT NULL COMMENT '动态id',
     FOREIGN KEY(did) REFERENCES dynamic(did),
     uid INT NOT NULL COMMENT '用户id',
     FOREIGN KEY(uid) REFERENCES user(uid)
 );
-INSERT INTO islike VALUES (1,1);
+INSERT INTO islike VALUES (1,1,1);
 -- 用户捐献数据表
 CREATE TABLE donation(
     did INT PRIMARY KEY AUTO_INCREMENT COMMENT '捐赠物资id',
@@ -69,6 +70,7 @@ CREATE TABLE region_data (
 );
 -- 国内时段数据表
 CREATE TABLE  country_data(
+    id INT PRIMARY KEY AUTO_INCREMENT COMMENT '时段数据id',
     insert_date VARCHAR(50) NOT NULL UNIQUE COMMENT '数据插入日期',
     confirm INT NOT NULL COMMENT '确诊人数',
     suspect INT NOT NULL COMMENT '疑似人数',

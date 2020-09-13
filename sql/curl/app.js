@@ -18,7 +18,7 @@ https.get("https://c.m.163.com/ug/api/wuhan/app/data/list-total",(res)=>{
         let country_data = result.data.chinaDayList
         country_data.forEach(item => {
             //插入数据库
-            pool.query('INSERT INTO country_data VALUES (?,?,?,?,?,?)',[item.date,item.total.confirm,item.total.suspect,item.total.heal,item.total.dead,item.total.input])
+            pool.query('INSERT INTO country_data(insert_date,confirm,suspect,heal,dead,input) VALUES (?,?,?,?,?,?)',[item.date,item.total.confirm,item.total.suspect,item.total.heal,item.total.dead,item.total.input])
         });
 
         //获取到region_data表内容
