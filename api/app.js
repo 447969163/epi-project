@@ -42,8 +42,7 @@ app.use((req,res,next)=>{
             res.send({"code":403,"msg":"token超时"})
         } else if (result.name == 'JsonWebTokenError') { // 如果返回结果是JsonWebTokenError，则说明token不对
             res.send({"code":403,"msg":"token错误"})
-        } else { // 如果正确解析了数据对象，将数据对象赋值给data，继续执行
-            req.data = result
+        } else { // 如果正确解析了数据对象，就继续执行
             next()
         }
     } else {
