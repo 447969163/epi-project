@@ -1,5 +1,5 @@
 #### 初始化
-+ 执行`npm install`补全需要的包
++ 执行`npm install -S`补全需要的包
 + 在浏览器地址栏输入`http://localhost:3030/接口地址`访问接口
 
 ### 接口整理
@@ -7,7 +7,7 @@
 #### 省份名称接口
 |接口地址|返回方式|请求方式|请求示例|接口备注|
 |:---|:---|:---|:---|:---|
-|/api/regionpname|json|GET|/api/regionpname|返回省份名称|
+|/api/regionpname|json|GET|http://localhost:3030/api/regionpname|返回省份名称|
 ##### 请求参数说明
 |名称|必填|类型|说明|
 |:---|:---|:---|:---|
@@ -67,7 +67,7 @@
 #### 城市名称接口
 |接口地址|返回方式|请求方式|请求示例|接口备注|
 |:---|:---|:---|:---|:---|
-|/api/regioncname|json|GET|/api/regioncname|返回城市名称|
+|/api/regioncname|json|GET|http://localhost:3030/api/regioncname|返回城市名称|
 ##### 请求参数说明
 |名称|必填|类型|说明|
 |:---|:---|:---|:---|
@@ -153,3 +153,80 @@
     ]
 }
 ```
+#### 注册接口
+|接口地址|返回方式|请求方式|请求示例|接口备注|
+|:---|:---|:---|:---|:---|
+|/api/register|json|POST|http://localhost:3030/api/register|注册接口|
+##### 请求参数说明
+|名称|必填|类型|说明|
+|:---|:---|:---|:---|
+|uname|是|string|用户名|
+|upwd|是|string|用户密码|
+|uphone|否|number|用户电话|
+|uaddress|否|string|用户住址|
+##### 返回参数说明
+|名称|类型|说明|
+|:---|:---|:---|
+|code|int|状态码|
+|msg|string|返回码描述|
+##### 接口返回示例
+```json
+{
+    "code": 200,
+    "msg": "注册成功"
+}
+```
+#### 登录接口
+|接口地址|返回方式|请求方式|请求示例|接口备注|
+|:---|:---|:---|:---|:---|
+|/api/login|json|POST|http://localhost:3030/api/login|登录接口|
+##### 请求参数说明
+|名称|必填|类型|说明|
+|:---|:---|:---|:---|
+|uname|是|string|用户名|
+|upwd|是|string|用户密码|
+##### 返回参数说明
+|名称|类型|说明|
+|:---|:---|:---|
+|code|int|状态码|
+|msg|string|返回码描述|
+|token|string|用户token|
+##### 接口返回示例
+```json
+{
+    "code" :200,
+    "msg": "登录成功"
+}
+```
+#### 个人中心接口
+|接口地址|返回方式|请求方式|请求示例|接口备注|
+|:---|:---|:---|:---|:---|
+|/api/user|json|POST|http://localhost:3030/api/user|个人中心接口|
+##### 请求参数说明
+|名称|必填|类型|说明|
+|:---|:---|:---|:---|
+|uid|是|number|用户id|
+##### 返回参数说明
+|名称|类型|说明|
+|:---|:---|:---|
+|code|int|状态码|
+|msg|string|返回码描述|
+|data|json|用户信息|
+##### 接口返回示例
+```json
+{
+    "code": 200,
+    "msg": "请求成功",
+    "data": [{
+        "uid": 2,
+        "unick": "注册用户",
+        "uname": "ceshi1",
+        "upwd": "ceshi1",
+        "uavatar": "img/avatar/1.jpg",
+        "ugender": "未知",
+        "uphone": null,
+        "uaddress": null
+    }]
+}
+```
+
