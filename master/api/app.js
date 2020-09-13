@@ -14,3 +14,4 @@ app.use('/api',regionCnameRouter)
 // 动态详情列表路由
 let dynamicsRouter = require('./routes/regionDynamics');
 app.use('/api',dynamicsRouter);
+

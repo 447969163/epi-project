@@ -12,5 +12,6 @@ router.get('/dynamics',(req,res)=>{
     });
 });
 
+
 // 导出表路由
 module.exports = router
