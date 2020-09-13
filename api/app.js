@@ -9,4 +9,7 @@ let regionPnameRouter = require('./routes/regionPname')
 app.use('/api',regionPnameRouter)
 //城市名路由
 let regionCnameRouter = require('./routes/regionCname')
-app.use('/api',regionCnameRouter)
+app.use('/api',regionCnameRouter);
+// 首页路由
+let indexRouter = require("./routes/indexData");
+app.use("/api",indexRouter);
