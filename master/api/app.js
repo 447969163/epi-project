@@ -10,6 +10,7 @@ app.use('/api',regionPnameRouter)
 //城市名路由
 let regionCnameRouter = require('./routes/regionCname')
 app.use('/api',regionCnameRouter)
+
 // 动态详情列表路由
 let dynamicsRouter = require('./routes/regionDynamics');
 app.use('/api',dynamicsRouter);
