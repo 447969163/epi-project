@@ -1,7 +1,7 @@
 ## 数据库初始化说明
 
 + 导入数据库脚本`epi.sql`
-+ 进入`curl`文件夹路径，执行`npm install`，补全包
++ 进入`curl`文件夹路径，执行`npm install -S`，补全包
 + 执行`node app.js`启动服务器，将数据源中的数据插入数据库
 
 
