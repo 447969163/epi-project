@@ -9,6 +9,12 @@ router.get("/donationDetail",(req,res)=>{
   let sql="select dname from donation where dtype=?";
   pool.query(sql,[dtype],(err,result)=>{
     if(err) throw err;
+    //数组对象去重
+    let obj={};
+    result=result.reduce((cur,next)=>{
+      obj[next.dname] ? "" : obj[next.dname] = true && cur.push(next);
+      return cur;
+      },[])
     res.send({
       code:"1",
       message:"查找成功",

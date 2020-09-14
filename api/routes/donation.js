@@ -7,7 +7,14 @@ router.get("/donation",(req,res)=>{
   let sql="select dtype from donation"
   pool.query(sql,(err,result)=>{
     if(err) throw err;
-    console.log(result);
+    //console.log(result);
+    //数组对象去重
+    let obj={};
+    result=result.reduce((cur,next)=>{
+      obj[next.dtype] ? "" : obj[next.dtype] = true && cur.push(next);
+      return cur;
+      },[])
+    //console.log(result);
     res.send({
       code:"1",
       message:"查找成功",
