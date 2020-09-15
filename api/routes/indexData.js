@@ -6,7 +6,6 @@ const r = express.Router();
 r.get("/indexData",(req,res) => {
   // 根据用户切换的城市显示指定的数据
   let cname = req.query.cname;
-  cname = "武汉"
   let sql = "SELECT pname,cname,confirm,suspect,heal,dead FROM region_data WHERE cname=?";
   pool.query(sql,[cname],(err,result) => {
     if(err)  throw err;
