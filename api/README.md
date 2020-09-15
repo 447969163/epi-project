@@ -77,7 +77,7 @@
 |:---|:---|:---|
 |code|int|状态码|
 |msg|string|返回码描述|
-|pname|城市名|
+|cname|城市名|
 ##### 接口返回示例
 ```json
 {
@@ -242,7 +242,12 @@
 |:---|:---|:---|
 |code|int|状态码|
 |msg|string|返回码描述|
-|data|json|用户选择的城市信息|
+|pname|string|当前用户选择的省份|
+|cname|string|当前用户选择的城市|
+|confirm|int|当前城市的确诊人数|
+|suspect|int|当前城市的疑似病例|
+|heal|int|当前城市的治愈人数|
+|dead|int|当前城市的死亡人数|
 ##### JSON返回示例
 ```json
 {
@@ -274,7 +279,12 @@
 |:---|:---|:---|
 |code|int|状态码|
 |msg|string|返回码描述|
-|data|json|当前一周的全国总数据|
+|insert_date|string|当前数据的更新时间|
+|confirm|int|当天全国确诊人数|
+|suspect|int|当天全国疑似病例|
+|heal|int|当天全国治愈人数|
+|dead|int|当天全国死亡人数|
+|input|int|当天境外输入人数|
 ##### JSON返回示例
 ```json
 {
@@ -353,7 +363,13 @@
 |:---|:---|:---|
 |code|int|状态码|
 |msg|string|返回码描述|
-|data|json|文章的详情信息|
+|aid|int|当前文章id|
+|asubject|string|当前文章标题|
+|aimg|string|当前文章封面图片|
+|aconment|string|当前文章详情|
+|atime|int|当前文章发布时间|
+|aimport|string|当前文章是否置顶|
+|type|string|当前文章类型|
 ##### JSON返回示例
 ```json
 {
