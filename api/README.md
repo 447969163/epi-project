@@ -77,7 +77,7 @@
 |:---|:---|:---|
 |code|int|状态码|
 |msg|string|返回码描述|
-|cname|城市名|
+|cname|string|城市名
 ##### 接口返回示例
 ```json
 {
