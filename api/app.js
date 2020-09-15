@@ -15,7 +15,10 @@ let regionPnameRouter = require('./routes/regionPname')
 app.use('/api',regionPnameRouter)
 //城市名路由
 let regionCnameRouter = require('./routes/regionCname')
-app.use('/api',regionCnameRouter);
+app.use('/api',regionCnameRouter)
+// 动态详情列表路由
+let dynamicsRouter = require('./routes/regionDynamics');
+app.use('/api',dynamicsRouter);
 // 首页路由
 let indexRouter = require("./routes/indexData");
 app.use("/api",indexRouter);
