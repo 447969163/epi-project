@@ -28,6 +28,12 @@ app.use('/api',loginRouter)
 //注册路由
 let registerRouter = require('./routes/register')
 app.use('/api',registerRouter)
+//用户捐赠一级接口路由
+let donation=require('./routes/donation')
+app.use("/api",donation);
+//用户捐赠的二级接口路由
+let donationDetail=require('./routes/donationDetail');
+app.use('/api',donationDetail);
 
 // token验证中间件[待补充整合]
 // 引入jwt
