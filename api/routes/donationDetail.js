@@ -16,7 +16,7 @@ router.get("/donationDetail",(req,res)=>{
       return cur;
       },[])
     res.send({
-      code:"1",
+      code:"200",
       message:"查找成功",
       result:result
     })
