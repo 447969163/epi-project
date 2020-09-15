@@ -11,7 +11,5 @@ router.get('/dynamics',(req,res)=>{
         res.send({message:"请求成功",code:200,result:result});
     });
 });
-
-
 // 导出表路由
 module.exports = router
